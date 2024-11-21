@@ -5,7 +5,7 @@ Created on 31 oct 2024
 '''
 # entrega2/tipos/Pila.py
 from __future__ import annotations
-from typing import Generic, TypeVar
+from typing import TypeVar
 from entrega2.tipos.Agregado_lineal import Agregado_lineal
 
 E = TypeVar('E')

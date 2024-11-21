@@ -3,7 +3,7 @@ Created on 31 oct 2024
 
 @author: alvar
 '''
-from typing import Generic, TypeVar, List, Tuple, Callable
+from typing import Generic, TypeVar, List, Tuple
 
 E = TypeVar('E')
 P = TypeVar('P')

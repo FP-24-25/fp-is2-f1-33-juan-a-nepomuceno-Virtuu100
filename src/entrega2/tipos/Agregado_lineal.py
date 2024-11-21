@@ -44,3 +44,16 @@ class Agregado_lineal(ABC, Generic[E]):
         while not self.is_empty:
             removed.append(self.remove())
         return removed
+    
+    def contains(self,e:E)->bool:
+        return e in self._elements
+    
+    def find(self,func: Callable[[E], bool])-> E | None:
+        for item in self._elements:
+            if func(item):
+                return item
+        return None
+    
+    def filter(self, func: Callable[[E], bool])-> list[E]:
+        return [e for e in self._elements if func(e)]
+        
