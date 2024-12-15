@@ -147,14 +147,11 @@ class E_grafo(Grafo[V,E]):
         return g
     
     def plot_graph(self):
-        # Create an empty networkx graph
         G = nx.DiGraph() if self._graph_type == Graph_type.DIRECTED else nx.Graph()
     
-        # Add vertices to the graph
         for vertex in self._vertex_set:
             G.add_node(vertex)
     
-        # Add edges to the graph
         edge_labels: dict = {}
         for edge in self._edge_set:
             source = self.edge_source(edge)
@@ -162,12 +159,10 @@ class E_grafo(Grafo[V,E]):
             G.add_edge(source, target)
             edge_labels[(source, target)] = self._weight(edge)
     
-        # Plot the graph using matplotlib
-        plt.figure(figsize=(8, 8))  # You can adjust the size
-        pos = nx.spring_layout(G)  # Layout for node positioning
+        plt.figure(figsize=(8, 8))  
+        pos = nx.spring_layout(G)  
         nx.draw(G, pos, with_labels=True, node_size=3000, node_color="lightblue", font_size=12, font_weight="bold", edge_color="gray")
         nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=10, font_color="red")
-        # Show the plot
         plt.title("Graph Visualization")
         plt.show()
         
